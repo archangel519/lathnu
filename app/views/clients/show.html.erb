@@ -6,7 +6,7 @@
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'> 
 	<a-assets>
-		<video id="video1player" class="video-player" src="<%= asset_path("videos/#{@client}.mp4") %>" controls>
+		<video id="video1player" class="video-player" src="<%= asset_path("videos/#{@client}.mp4") %>" autoplay muted playsinline controls>
       <source src="<%= asset_path("videos/#{@client}.mp4") %>" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
       Video not supported.
 		</video>
