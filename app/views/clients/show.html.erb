@@ -12,8 +12,7 @@
 		</video>
 		end
 	</a-assets>
-	<a-marker-camera preset='hiro'> 
-  <a-marker-camera preset='custom' url='<%= asset_path("/markers/#{@client}.patt") %>'></a-marker-camera>
+  <a-marker-camera type='pattern' url='<%= asset_url("/markers/#{@client}.patt") %>'>
 		<a-video id="inputVideo" src="#video1player" rotation="90 180 0" position="0 0 0"></a-video> 
-	</a-marker> 
+  </a-marker-camera>
 </a-scene>
