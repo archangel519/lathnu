@@ -43,8 +43,27 @@ var modals = {
         duration : 300
       }
     });
+    
+    $('#help-container').dialog({
+      autoOpen: false,
+      resizable: false,
+      width: 'auto',
+      height: 'auto',
+      show : {
+        effect : 'fade',
+        duration : 300
+      },
+      hide : {
+        effect : "fade",
+        duration : 300
+      }
+    });
 
     $(".video-player").each(function() {
+      $('.ui-widget-header').remove();
+    });
+    
+    $("#help-container").each(function() {
       $('.ui-widget-header').remove();
     });
 
@@ -57,7 +76,10 @@ var modals = {
       $('#overlay').fadeIn();
     });
     
-    
+    $('.help-tip').on('click', function() {
+      $('#help-container').dialog("open");
+      $('#overlay').fadeIn();
+    });
 
     $(document).mouseup(function(e) {
       if ($('.video-player').is(':visible')) {
@@ -70,6 +92,15 @@ var modals = {
           $('video').each(function() {
             $(this)[0].pause();
           });
+        }
+      } 
+      
+      if ($('#help-container').is(':visible')) {
+        var container = $("#help-container");
+
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+          container.dialog("close");
+          $('#overlay').fadeOut(500);
         }
       }
     });

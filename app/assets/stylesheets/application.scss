@@ -18,18 +18,29 @@
   box-sizing: border-box;
 }
 
-.help-container {
-  position: fixed;
-  top: 5px;
-  width: auto;
+#help-container {
   text-align: center;
-  z-index: 1;
-  background: rgba(34, 34, 34, .5);
-  color: #fefefe;
-  padding: 5px 20px; p { display : inline-block;
-  margin-right: 15px;
+  padding: 30px 20px;
 }
 
+.help-tip{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+    background-color: #BCDBEA;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 24px;
+    line-height: 36px;
+    cursor: pointer;
+}
+
+.help-tip:before{
+    content:'?';
+    font-weight: bold;
+    color:#fff;
 }
 
 /* video styles */
@@ -70,6 +81,7 @@
   background-color: #2ecc71;
   color: #ecf0f1;
   transition: background-color .3s;
+  cursor: pointer;
 }
 
 .btn:hover, .btn:focus {

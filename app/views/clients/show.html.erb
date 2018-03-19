@@ -1,5 +1,5 @@
 <div id="overlay" class="overlay"></div>
-<div class="help-container">
+<div id="help-container">
   <p>Place the camera over the square icon on the page. Having trouble watching the video?</p>
   <button id="video1" class="btn orange load-video" type="button"><span>Full Screen Video</span></button>
 </div>
@@ -13,6 +13,8 @@
 		end
 	</a-assets>
   <a-marker-camera type='pattern' url='<%= asset_url("/markers/#{@client}.patt") %>'>
-		<a-video id="inputVideo" src="#video1player" rotation="45 180 0" position="0 .85 0"></a-video> 
+		<a-video id="inputVideo" src="#video1player" rotation="30 180 0" position="0 .5 0"></a-video> 
   </a-marker-camera>
 </a-scene>
+
+<div class="help-tip"></div>
