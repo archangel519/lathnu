@@ -1,20 +1,18 @@
-<div id="overlay" class="overlay"></div>
 <div id="help-container">
-  <p>Place the camera over the square icon on the page. Having trouble watching the video?</p>
-  <button id="video1" class="btn orange load-video" type="button"><span>Full Screen Video</span></button>
+  <p>Having trouble?</p>
+  <button id="video1" class="btn orange load-video" type="button" data-fancybox data-src="#video1player"><span>Full Screen Video</span></button>
 </div>
 
 <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'> 
 	<a-assets>
-		<video id="video1player" class="video-player" src="<%= asset_path("videos/#{@client}.mp4") %>" autoplay muted playsinline controls>
-      <source src="<%= asset_path("videos/#{@client}.mp4") %>" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'>
+		<video id="video1player" class="video-player" src="<%= asset_path("videos/#{@client}.mp4") %>" playsinline controls>
+      <source src="<%= asset_path("videos/#{@client}.mp4") %>" type='video/mp4'>
       Video not supported.
 		</video>
 		end
 	</a-assets>
-  <a-marker-camera type='pattern' url='<%= asset_url("/markers/#{@client}.patt") %>'>
-		<a-video id="inputVideo" src="#video1player" rotation="30 180 0" position="0 .5 0"></a-video> 
-  </a-marker-camera>
+  <a-marker type='pattern' url='<%= asset_url("/markers/#{@client}.patt") %>' mouse-cursor>
+		<a-video id="inputVideo" src="#video1player" rotation="80 180 0" position="0 .2 0"></a-video> 
+  </a-marker>
+  <a-camera></a-camera>
 </a-scene>
-
-<div class="help-tip"></div>
