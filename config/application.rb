@@ -24,5 +24,13 @@ module FsAugmentedReality
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    
+    # Access-Control-Allow-Origin
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'localhost:3000', /https*:\/\/.*?ngrok\.com/
+        resource '*', :headers => :any, :methods => [:get, :options]
+      end
+    end
   end
 end
