@@ -14,7 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
-//= require jquery.fancybox
 //= require_tree .
 Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
     get: function(){
@@ -35,9 +34,7 @@ $(document).ready(function() {
   }
   
   var pauseVideo = function(video) {
-    console.log('pauseVideo called.');
     if (video.playing) {
-      console.log('video is playing, pausing video');
       video.pause();
     }
   }
@@ -50,34 +47,11 @@ $(document).ready(function() {
     }
   });
   
-  $("[data-fancybox]").fancybox({
-    afterLoad: function() {
-      var vid = $('.fancybox-container video')[0];
-      
-      if (screenfull.enabled) {
-        screenfull.request(vid);
-      }
-      
-      playVideo(vid);
-    }
-  });
-  
-  if (screenfull.enabled) {
-    screenfull.on('change', () => {
-      if (!screenfull.isFullscreen) {
-        var instance = $.fancybox.getInstance();
-        instance.close();
-      }
-    });
-  }
-  
   $('a-marker').on('marker-found', function(event) {
-    console.log('received marker-found');
     playVideo(arvideo);
   });
   
   $('a-marker').on('marker-lost', function(event) {
-    console.log('received marker-lost');
     pauseVideo(arvideo);
   });
 });

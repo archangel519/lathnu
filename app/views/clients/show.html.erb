@@ -1,12 +1,14 @@
 <div id="help-container">
   <p>Having trouble?</p>
-  <button id="video1" class="btn orange load-video" type="button" data-fancybox data-src="#video1player"><span>Full Screen Video</span></button>
+  <a id="video1" class="btn orange" role="button" href="https://vimeo.com/262276112/3de86f3ddc"><span>Full Screen Video</span></a>
 </div>
 
 <a-scene embedded arjs='debugUIEnabled: false;'> 
 	<a-assets>
 		<video id="video1player" class="video-player" preload="auto" playsinline controls>
       <source src='<%= asset_path("videos/#{@client}.mp4") %>' type='video/mp4'>
+      <source src='<%= asset_path("videos/#{@client}.webm") %>' type='video/webm'>
+      <source src='<%= asset_path("videos/#{@client}.ogv") %>' type='video/ogg'>
       Video not supported.
 		</video>
 	</a-assets>
