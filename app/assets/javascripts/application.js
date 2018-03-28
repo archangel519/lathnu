@@ -42,6 +42,14 @@ $(document).ready(function() {
     }
   }
   
+  $('canvas').on('click', function() {
+    if (!arvideo.playing) {
+      playVideo(arvideo);
+    } else {
+      pauseVideo(arvideo);
+    }
+  });
+  
   $("[data-fancybox]").fancybox({
     afterLoad: function() {
       var vid = $('.fancybox-container video')[0];

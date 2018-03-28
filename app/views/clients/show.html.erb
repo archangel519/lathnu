@@ -6,7 +6,7 @@
 <a-scene embedded arjs='debugUIEnabled: false;'> 
 	<a-assets>
 		<video id="video1player" class="video-player" src='<%= asset_path("videos/#{@client}.mp4") %>' playsinline controls>
-      <source src="<%= asset_path("videos/#{@client}.mp4") %>" type='video/mp4'>
+      <source src='<%= asset_path("videos/#{@client}.mp4") %>' type='video/mp4'>
       Video not supported.
 		</video>
 	</a-assets>
