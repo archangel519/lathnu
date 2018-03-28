@@ -20,7 +20,8 @@ $font-family-sans-serif: 'Montserrat', 'Helvetica Neue', Helvetica , sans-serif;
 
 html {
   font-family: $font-family-sans-serif;
-  font-size: 16px;
+  font-size: 14px;
+  font-size: 1vmax;
 }
  
 *, *:before, *:after {
@@ -33,13 +34,15 @@ html {
   left: 0;
   background-color: rgba(64, 73, 113, .8);
   width: 100%;
-  padding: 10px 20px;
+  padding: 5px 20px;
+  padding: .5vmax 2vmax;
   z-index: 10;
   color: white;
   
   p {
     display: inline-block;
     margin-right: 30px;
+    margin-right: 2vmax;
   }
 }
 
@@ -47,7 +50,8 @@ html {
 .btn {
   position: relative;
   display: inline-block;
-  margin: 5px auto;
+  margin: 2px auto;
+  margin: .2vmax auto;
   padding: 0;
   overflow: hidden;
   border-width: 0;
@@ -72,6 +76,7 @@ html {
 .btn span {
   display: block;
   padding: 12px 24px;
+  padding: .5vmax 1vmax;
 }
 
 .btn:before {
