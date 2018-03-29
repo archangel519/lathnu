@@ -23,6 +23,7 @@ Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
 
 $(document).ready(function() {
   var arvideo = $('#video1player')[0];
+  var arvideo_visible = false;
   
   var playVideo = function(video) {
     if (!video.playing) {
@@ -40,18 +41,22 @@ $(document).ready(function() {
   }
   
   $('canvas').on('click', function() {
-    if (!arvideo.playing) {
-      playVideo(arvideo);
-    } else {
-      pauseVideo(arvideo);
+    if (arvideo_visible) {
+      if (!arvideo.playing) {
+        playVideo(arvideo);
+      } else {
+        pauseVideo(arvideo);
+      }
     }
   });
   
   $('a-marker').on('marker-found', function(event) {
+    arvideo_visible = true;
     playVideo(arvideo);
   });
   
   $('a-marker').on('marker-lost', function(event) {
+    arvideo_visible = false;
     pauseVideo(arvideo);
   });
 });
