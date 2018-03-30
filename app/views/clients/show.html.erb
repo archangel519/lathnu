@@ -5,12 +5,8 @@
 
 <a-scene embedded arjs='debugUIEnabled: false;'> 
 	<a-assets>
-		<video id="video1player" class="video-player" preload="auto" playsinline controls>
-      <source src='<%= asset_path("videos/#{@client}.mp4") %>' type='video/mp4'>
-      <source src='<%= asset_path("videos/#{@client}.webm") %>' type='video/webm'>
-      <source src='<%= asset_path("videos/#{@client}.ogv") %>' type='video/ogg'>
-      Video not supported.
-		</video>
+    <% video_url = (@client == 'test') ? 'https://ucarecdn.com/4130c599-445f-4e76-9052-49978e972641/' : asset_path("videos/#{@client}.mp4") %>
+		<video id="video1player" class="video-player" src='<%= video_url %>' preload="auto" playsinline controls></video>
 	</a-assets>
   <a-marker type='pattern' url='<%= asset_url("/markers/#{@client}.patt") %>'>
 		<a-video id="inputVideo" src="#video1player" rotation="280 0 0" position="0 .2 0"></a-video>

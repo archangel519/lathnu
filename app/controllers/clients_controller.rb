@@ -7,9 +7,8 @@ class ClientsController < ApplicationController
   private
   
     def set_client
-      clients = ['steccap']
+      clients = ['steccap', 'test']
       @client = clients.detect { |c| c == params[:slug]}
-      logger.fatal @client.inspect
       raise ActionController::RoutingError.new('Not Found') unless @client.present?
     end
 end
