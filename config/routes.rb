@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'clients#show'
+  root 'items#show'
   
-  get '/:slug', to: 'clients#show'
+  get 'items/:slug', to: 'items#show'
 end
