@@ -10,6 +10,6 @@
     <a-asset-item id="scene" src='<%= asset_path("#{@item.slug}/#{@item.gltf}") %>'></a-asset-item>
   </a-assets>
   <a-marker preset="custom" type='pattern' url='<%= asset_url("#{@item.slug}.patt") %>'>
-    <a-entity gltf-model="#scene" scale=".03 .03 .03" rotation="0 0 245"></a-entity>
+    <a-entity gltf-model="#scene" position='<%= @item.position %>' scale='<%= @item.scale %>' rotation='<%= @item.rotation %>' animation-mixer></a-entity>
   </a-marker>
 <a-entity camera=""></a-entity>
