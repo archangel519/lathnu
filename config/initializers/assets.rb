@@ -14,3 +14,10 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "marke
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+# register the gltf mime type to prevent sprockets turning it into a .txt file
+Rails.application.config.assets.configure do |env|
+  env.register_mime_type('model/gltf+json', extensions: ['.gltf'])
+end
+
+Rails.application.config.assets.precompile += ['*.gltf', '**/*.gltf', '*.bin', '**/*.bin', '*.patt', '**/*.patt']
