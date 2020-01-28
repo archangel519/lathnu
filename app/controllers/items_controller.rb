@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
   
     def set_item
       items = [
-        Item.new(name: 'STEC CAP', slug: 'amulet', gltf: '', title: '', description: '')
+        Item.new(name: 'Amulet', slug: 'amulet', gltf: 'scene.gltf', description: 'The Amulet of Vigor has mysterious powers.')
       ]
       @item = items.detect { |c| c.slug == params[:slug]}
       raise ActionController::RoutingError.new('Not Found') unless @item.present?

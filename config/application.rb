@@ -25,6 +25,8 @@ module FsAugmentedReality
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     
+    #config.assets.paths << "#{Rails.root}/app/assets/gltfs"
+    
     # Access-Control-Allow-Origin
     config.middleware.insert_before 0, Rack::Cors do
       allow do

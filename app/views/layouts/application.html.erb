@@ -5,16 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-4457759-22"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'UA-4457759-22');
-    </script>
-    
     <% if content_for?(:meta_tags) %>
     <%= yield(:meta_tags) %>
     <% end %>
@@ -22,13 +12,13 @@
     <% if content_for?(:title_tag) %>
       <%= yield(:title_tag) %>
     <% else %>
-      <title>Augmented Reality with Firespring</title>
+      <title>Lathnu Campaign</title>
     <% end %>
     
     <% if content_for?(:description_tag) %>
       <%= yield(:description_tag) %>
     <% else %>
-      <meta name="description" content="Check out Firespring's work with our clients by viewing this page on your smartphone or tablet.">
+      <meta name="description" content="The continent of Lathnu has some of the bravest adventurers around.">
     <% end %>
 
     <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
