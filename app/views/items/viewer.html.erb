@@ -1,0 +1,21 @@
+<% content_for :title_tag do %>
+  <title>Lathnu Items</title>
+<% end %>
+<% content_for :description_tag do %>
+  <title>The items of Lathnu</title>
+<% end %>
+
+<a-scene embedded="" arjs="debugUIEnabled: false;" inspector="" keyboard-shortcuts="" screenshot="" vr-mode-ui="" device-orientation-permission-ui="">
+  <a-assets>
+  <% @items.each do |item| %>
+    <a-asset-item id="scene-<%= item.slug %>" src='<%= asset_path("#{item.slug}/#{item.gltf}") %>'></a-asset-item>
+  <% end %>
+  </a-assets>
+  
+  <% @items.each do |item| %>
+  <a-marker preset="custom" type='pattern' url='<%= asset_url("#{item.slug}.patt") %>'>
+    <a-entity gltf-model="#scene-<%= item.slug %>" position='<%= item.position %>' scale='<%= item.scale %>' rotation='<%= item.rotation %>' animation-mixer></a-entity>
+  </a-marker>
+  <% end %>
+  <a-entity camera=""></a-entity>
+</a-scene>

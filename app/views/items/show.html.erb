@@ -12,4 +12,5 @@
   <a-marker preset="custom" type='pattern' url='<%= asset_url("#{@item.slug}.patt") %>'>
     <a-entity gltf-model="#scene" position='<%= @item.position %>' scale='<%= @item.scale %>' rotation='<%= @item.rotation %>' animation-mixer></a-entity>
   </a-marker>
-<a-entity camera=""></a-entity>
+  <a-entity camera=""></a-entity>
+</a-scene>
