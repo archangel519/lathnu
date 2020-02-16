@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
       [
         Item.new(name: 'Amulet', slug: 'amulet', gltf: 'scene.gltf', position: '0 0 0', scale: '.03 .03 .03', rotation: '0 0 230', description: 'The Amulet of Vigor has mysterious powers.'),
         Item.new(name: 'Aether Sword', slug: 'aether-sword', gltf: 'scene.gltf', position: '.8 .2 -.2', scale: '.045 .045 .045', rotation: '0 130 0', description: 'A unique sword powered by aether.'),
-        Item.new(name: 'AetherHub Key', slug: 'aetherhub-key', gltf: 'scene.gltf', position: '0 0 0', scale: '.1 .1 .1', rotation: '0 0 0', description: 'A mysterious key.')
+        Item.new(name: 'AetherHub Key', slug: 'aetherhub-key', gltf: 'scene.gltf', position: '0 0 0', scale: '.15 .15 .15', rotation: '0 0 0', description: 'A mysterious key.')
       ]
     end
 end
